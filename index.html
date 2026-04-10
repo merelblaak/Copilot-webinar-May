@@ -213,7 +213,7 @@
 
     .speakers-grid {
       display:grid;
-      grid-template-columns:repeat(6, minmax(180px,1fr));
+      grid-template-columns:repeat(4, minmax(180px,1fr));
       gap:20px;
     }
     .speaker-card {
@@ -225,14 +225,13 @@
       position:relative; overflow:hidden;
       align-items:center;
     }
-    .speaker-photo-wrap {
+    .speaker-avatar-placeholder {
       width:84px; height:84px; border-radius:50%;
-      background:linear-gradient(140deg,var(--accent-blue) 0%, var(--accent-purple) 52%, var(--accent-pink) 100%);
-      padding:3px; display:flex; align-items:center; justify-content:center;
+      background: rgba(88,166,255,0.08);
+      border: 2px dashed var(--border);
+      display:flex; align-items:center; justify-content:center;
       margin-bottom:8px;
-    }
-    .speaker-photo {
-      width:100%; height:100%; border-radius:50%; object-fit:cover; background:#0d1117; display:block;
+      color: var(--text-faint);
     }
     .speaker-name { font-size:14.5px; margin:0 0 4px; font-weight:600; letter-spacing:.2px; color:var(--text); text-align:center; }
     .speaker-role { font-size:12px; font-weight:500; color:var(--text-faint); text-align:center; margin:0 0 8px; }
@@ -269,7 +268,7 @@
       <div class="hero-subtitle">Migrate, Integrate &amp; Accelerate with GitHub Copilot.</div>
       <div class="meta-bar" aria-label="Event metadata">
         <span class="meta-item">
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18/></svg>
           May 21, 2026
         </span>
         <span class="meta-sep" aria-hidden="true">•</span>
@@ -285,7 +284,7 @@
       </div>
       <div class="hero-lead">
         <p>Join this webinar to discover how to successfully migrate from Azure DevOps to GitHub or harness a powerful hybrid approach for modern, secure, and efficient software delivery.</p>
-        <p>Nowadays development teams demand agility, security, and seamless collaboration. While Azure DevOps has long been the backbone for many enterprises, GitHub has rapidly emerged as the leading platform for modern developer experiences and cloud-native innovation.</p>
+        <p>Nowadays development teams demand agility, security, and seamless collaboration. While Azure DevOps has long been the backbone for many enterprises, GitHub has rapidly emerged as the leading platform for AI-powered, cloud-native development.</p>
         <p>But is it time to switch entirely or to combine the strengths of both?</p>
       </div>
       <div class="hero-actions">
@@ -368,9 +367,7 @@
       <div class="location-grid">
         <div>
           <p style="margin:0 0 6px; font-size:15px; font-weight:500; color:var(--text);">Online / Virtual Event</p>
-          <p style="margin:0 0 18px; font-size:14px; line-height:1.5;">
-            <a href="#">Webinar join link (to be shared with registered attendees)</a>
-          </p>
+          <p style="margin:0 0 18px; font-size:14px; line-height:1.5;"><a href="#">Webinar join link (to be shared with registered attendees)</a></p>
           <p>This session is delivered as an online webinar. Registered participants will receive access instructions and joining details before the event starts.</p>
         </div>
       </div>
@@ -380,63 +377,48 @@
     <section id="speakers">
       <h2 class="section-title">Speakers</h2>
       <div class="speakers-grid">
-        <!-- Jonas Teite Nilsson -->
+        <!-- Speaker 1 placeholder -->
         <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_3_URL" alt="Jonas Teite Nilsson">
+          <div class="speaker-avatar-placeholder">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/>
+            </svg>
           </div>
           <div>
-            <h3 class="speaker-name">Jonas Teite Nilsson</h3>
-            <p class="speaker-role">Sales Manager Cloud Native &amp; AI at Microsoft</p>
+            <p class="speaker-name" style="color:var(--text-faint); font-style:italic;">Speaker TBA</p>
           </div>
         </div>
-        <!-- Omur Sert -->
+        <!-- Speaker 2 placeholder -->
         <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_4_URL" alt="Omur Sert">
+          <div class="speaker-avatar-placeholder">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/>
+            </svg>
           </div>
           <div>
-            <h3 class="speaker-name">Omur Sert</h3>
-            <p class="speaker-role">Senior Manager for Corporate Europe-North at GitHub</p>
+            <p class="speaker-name" style="color:var(--text-faint); font-style:italic;">Speaker TBA</p>
           </div>
         </div>
-        <!-- Aaron Hallberg -->
+        <!-- Speaker 3 placeholder -->
         <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_6_URL" alt="Aaron Hallberg">
+          <div class="speaker-avatar-placeholder">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/>
+            </svg>
           </div>
           <div>
-            <h3 class="speaker-name">Aaron Hallberg</h3>
+            <p class="speaker-name" style="color:var(--text-faint); font-style:italic;">Speaker TBA</p>
           </div>
         </div>
-        <!-- Nerea Leguinazabal -->
+        <!-- Speaker 4 placeholder -->
         <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_7_URL" alt="Nerea Leguinazabal">
+          <div class="speaker-avatar-placeholder">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/>
+            </svg>
           </div>
           <div>
-            <h3 class="speaker-name">Nerea Leguinazabal</h3>
-            <p class="speaker-role">Software Engineer</p>
-          </div>
-        </div>
-        <!-- Alessandra Vicini -->
-        <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_9_URL" alt="Alessandra Vicini">
-          </div>
-          <div>
-            <h3 class="speaker-name">Alessandra Vicini</h3>
-            <p class="speaker-role">Software Engineer</p>
-          </div>
-        </div>
-        <!-- Magnus Timner -->
-        <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_8_URL" alt="Magnus Timner">
-          </div>
-          <div>
-            <h3 class="speaker-name">Magnus Timner</h3>
-            <p class="speaker-role">VP and Co-founder of Solidify/Eficode</p>
+            <p class="speaker-name" style="color:var(--text-faint); font-style:italic;">Speaker TBA</p>
           </div>
         </div>
       </div>
