@@ -106,6 +106,18 @@
       line-height:1.04; margin:0 0 10px;
       font-weight:700; letter-spacing:-1.2px; color:#111927;
     }
+    .hero-badge {
+      display:inline-flex;
+      align-items:center;
+      border-radius:999px;
+      padding:6px 12px;
+      font-size:12px;
+      font-weight:600;
+      color:var(--text-light);
+      background:var(--surface);
+      border:1px solid var(--border);
+      margin:0 0 14px;
+    }
     .hero-subtitle {
       font-size: clamp(1.05rem, 2.1vw, 1.35rem);
       font-weight:600;
@@ -169,7 +181,10 @@
       line-height:1.15; letter-spacing:-.5px;
       font-weight:600; color:var(--text);
     }
+    .section-title-top { margin-top:0; }
     p { font-size:15px; line-height:1.55; margin:0 0 18px; color:var(--text-light); }
+    .muted-text { color:var(--text-faint); }
+    .no-margin { margin:0; }
 
     .event-details-list, .agenda-timetable {
       list-style:none; padding:0; margin:0;
@@ -233,6 +248,10 @@
     .speaker-photo {
       width:100%; height:100%; border-radius:50%; object-fit:cover; background:#fff; display:block;
     }
+    .speaker-placeholder {
+      background:var(--border);
+      padding:0;
+    }
     .speaker-name { font-size:14.5px; margin:0 0 4px; font-weight:600; letter-spacing:.2px; color:var(--text); text-align:center; }
     .speaker-role { font-size:12px; font-weight:500; color:var(--text-faint); text-align:center; margin:0 0 8px; }
 
@@ -260,33 +279,11 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 3c-4.97 0-9 4.03-9 9a9 9 0 0 0 6.14 8.56c.45.08.62-.2.62-.44 0-.22-.01-.94-.01-1.71-2.25.49-2.84-.55-3.02-1.06-.1-.23-.54-1.06-.92-1.28-.31-.17-.76-.6-.01-.61.7-.01 1.2.64 1.37.9.8 1.34 2.08.96 2.59.73.08-.58.31-.96.56-1.18-1.99-.23-4.09-1-4.09-4.42 0-.98.35-1.79.92-2.42-.09-.23-.4-1.16.09-2.41 0 0 .75-.24 2.45.92a8.32 8.32 0 0 1 2.23-.3c.76 0 1.52.1 2.23.3 1.7-1.17 2.45-.92 2.45-.92.49 1.25.18 2.18.09 2.41.57.63.92 1.44.92 2.42 0 3.43-2.11 4.19-4.11 4.41.32.28.6.82.6 1.66 0 1.2-.01 2.17-.01 2.47 0 .24.16.52.62.43A9 9 0 0 0 21 12c0-4.97-4.03-9-9-9Z"/>
-        </svg>
-        GitHub & Azure DevOps Event
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#flow">Event Details</a>
-        <a href="#highlights">Copilot Demo Highlights</a>
-        <a href="#location">Location</a>
-        <a href="#speakers">Speakers</a>
-        <a href="#register">Register</a>
-      </div>
-      <div class="nav-cta">
-        <a href="#register" class="btn">Register</a>
-      </div>
-    </div>
-  </nav>
-
   <!-- Hero -->
   <header class="hero" id="about">
     <div class="hero-inner">
       <div class="hero-left">
+        <span class="hero-badge" aria-label="Webinar label">Webinar: GitHub &amp; Azure DevOps</span>
         <h1>From Azure DevOps to GitHub.</h1>
         <div class="hero-subtitle">Migrate, Integrate &amp; Accelerate with GitHub Copilot.</div>
         <div class="hero-lead">
@@ -297,6 +294,7 @@
         <div class="hero-actions">
           <a class="btn" href="#register">
             <span>Register Now</span>
+            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
@@ -339,17 +337,6 @@
           <div class="info-row">
             <div class="info-icon">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 4h18M8 4v16m8-16v16M3 20h18M5 8h2m10 0h2M5 12h2m10 0h2M5 16h2m10 0h2"/>
-              </svg>
-            </div>
-            <div>
-              <div class="info-label">Format</div>
-              <div class="info-value">Vision • Live Demos • Strategy • Q&amp;A • Networking</div>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="info-icon">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 10v12M17 10v12M3 6l9-4 9 4M21 6v6c0 6-4 10-9 10S3 18 3 12V6"/>
               </svg>
             </div>
@@ -367,22 +354,8 @@
     <!-- Event Details Section -->
     <section id="flow">
       <div class="card">
-        <h2 class="section-title" style="margin-top:0;">Event Details</h2>
-        <ul class="event-details-list">
-          <li>📅 <strong>Date:</strong> 21 May 2026</li>
-          <li>📍 <strong>Location:</strong> Online / Virtual Event</li>
-          <li>🏢 <strong>Hosted by:</strong> Microsoft, GitHub, and Eficode</li>
-        </ul>
-        <h3 class="agenda-heading-inline">Event Agenda</h3>
-        <ul class="agenda-timetable">
-          <li><strong>1:00 PM</strong> | Welcome</li>
-          <li><strong>1:15 PM</strong> | Session 1: Benefits of GitHub | Reasons to move (by Microsoft)</li>
-          <li><strong>1:45 PM</strong> | Session 2: The future of GitHub &amp; GitHub Copilot (by GitHub)</li>
-          <li><strong>2:15 PM</strong> | Break</li>
-          <li><strong>2:25 PM</strong> | Session 3: Unlocking the Potential | GitHub Setup, Integration and Migration (by Eficode)</li>
-          <li><strong>2:55 PM</strong> | Q&amp;A</li>
-          <li><strong>3:00 PM</strong> | Networking &amp; Closing | Wrap-up and virtual networking</li>
-        </ul>
+        <h2 class="section-title section-title-top">Webinar Agenda</h2>
+        <p class="muted-text no-margin">Agenda topics coming soon — stay tuned!</p>
       </div>
     </section>
 
@@ -458,64 +431,21 @@
     <section id="speakers">
       <h2 class="section-title">Speakers</h2>
       <div class="speakers-grid">
-        <!-- Jonas Teite Nilsson -->
         <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_3_URL" alt="Jonas Teite Nilsson">
-          </div>
-          <div>
-            <h3 class="speaker-name">Jonas Teite Nilsson</h3>
-            <p class="speaker-role">Sales Manager Cloud Native &amp; AI at Microsoft</p>
-          </div>
+          <div class="speaker-photo-wrap speaker-placeholder"></div>
+          <p class="speaker-role no-margin">Speaker TBA</p>
         </div>
-        <!-- Omur Sert -->
         <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_4_URL" alt="Omur Sert">
-          </div>
-          <div>
-            <h3 class="speaker-name">Omur Sert</h3>
-            <p class="speaker-role">Senior Manager for Corporate Europe-North at GitHub</p>
-          </div>
+          <div class="speaker-photo-wrap speaker-placeholder"></div>
+          <p class="speaker-role no-margin">Speaker TBA</p>
         </div>
-        <!-- Aaron Hallberg -->
         <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_6_URL" alt="Aaron Hallberg">
-          </div>
-          <div>
-            <h3 class="speaker-name">Aaron Hallberg</h3>
-          </div>
+          <div class="speaker-photo-wrap speaker-placeholder"></div>
+          <p class="speaker-role no-margin">Speaker TBA</p>
         </div>
-        <!-- Nerea Leguinazabal -->
         <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_7_URL" alt="Nerea Leguinazabal">
-          </div>
-          <div>
-            <h3 class="speaker-name">Nerea Leguinazabal</h3>
-            <p class="speaker-role">Software Engineer</p>
-          </div>
-        </div>
-        <!-- Alessandra Vicini -->
-        <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_9_URL" alt="Alessandra Vicini">
-          </div>
-          <div>
-            <h3 class="speaker-name">Alessandra Vicini</h3>
-            <p class="speaker-role">Software Engineer</p>
-          </div>
-        </div>
-        <!-- Magnus Timner -->
-        <div class="speaker-card">
-          <div class="speaker-photo-wrap">
-            <img class="speaker-photo" src="IMAGE_8_URL" alt="Magnus Timner">
-          </div>
-          <div>
-            <h3 class="speaker-name">Magnus Timner</h3>
-            <p class="speaker-role">VP and Co-founder of Solidify/Eficode</p>
-          </div>
+          <div class="speaker-photo-wrap speaker-placeholder"></div>
+          <p class="speaker-role no-margin">Speaker TBA</p>
         </div>
       </div>
     </section>
@@ -549,7 +479,7 @@
 
   <script>
     // Smooth scroll
-    document.querySelectorAll('.nav-links a, .nav-cta a, a.btn[href^="#"]').forEach(a => {
+    document.querySelectorAll('a.btn[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const id = a.getAttribute('href');
         if (id.startsWith('#')) {
@@ -561,21 +491,6 @@
         }
       });
     });
-    // Active nav highlight
-    const navLinks = [...document.querySelectorAll('.nav-links a')];
-    const sections = navLinks.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
-    function onScroll() {
-      const y = window.scrollY + 120;
-      let current = sections[0];
-      for (const sec of sections) {
-        if (sec.offsetTop <= y) current = sec;
-      }
-      navLinks.forEach(l => {
-        l.dataset.navActive = l.getAttribute('href') === '#' + current.id;
-      });
-    }
-    document.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
   </script>
 </body>
 </html>
