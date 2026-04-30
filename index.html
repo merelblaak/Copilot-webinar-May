@@ -189,6 +189,12 @@
       margin-bottom:8px;
       color: var(--accent-blue);
     }
+    .speaker-avatar {
+      width:84px; height:84px; border-radius:50%;
+      object-fit:cover;
+      border: 2px solid var(--border);
+      margin-bottom:8px;
+    }
     .speaker-name { font-size:14.5px; margin:0 0 2px; font-weight:600; letter-spacing:.2px; color:var(--text); text-align:center; }
     .speaker-role { font-size:12px; font-weight:500; color:var(--text-faint); text-align:center; margin:0; }
 
@@ -320,12 +326,7 @@
       <div class="speakers-grid">
         <!-- Speaker 1: Merel Blaak -->
         <div class="speaker-card">
-          <div class="speaker-avatar-placeholder">
-            <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/>
-            </svg>
-          </div>
+          <img class="speaker-avatar" src="Merel foto.jpeg" alt="Merel Blaak" />
           <div>
             <p class="speaker-name">Merel Blaak</p>
             <p class="speaker-role">Account Executive at GitHub</p>
